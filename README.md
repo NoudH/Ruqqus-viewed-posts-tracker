@@ -9,3 +9,6 @@ Go to https://greasyfork.org/en/scripts/406754-ruqqus-viewed-posts-tracker and c
 
 #### Manual
 Create a new script in your prefered userscript loader (violentmonkey, tampermonkey, etc.) and copy and paste the code from *script.js* to it.
+
+## Bug report
+To report a bug please use the issue tracker on github.
