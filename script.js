@@ -76,7 +76,7 @@ const setupInfiniteScrollReload = () => {
 };
 
 const work = () => {
-    setupViewedPosts();
+	setupViewedPosts();
 	setupLinkClicked();
 	setupRuqesButton();
 	setupInfiniteScrollReload();
