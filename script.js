@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Ruqqus viewed posts tracker
 // @namespace    Doomness
-// @version      0.2
+// @version      0.3
 // @description  Tracks the posts you have already seen. Works with RuqES expando button and infinite scroll (not required!).
 // @author       @Doomness
 // @match        https://ruqqus.com/*
@@ -45,15 +45,22 @@ const rememberLink = ($el, url) => {
 
 const setupRuqesButton = () => {
 	$('a.RuqES-by-enefi--button').click(function() {
-		console.log('test');
 		var $linkEl = $(this).closest('div.card-block.text-left').find('a.stretched-link');
 		rememberLink($linkEl, $linkEl.attr('href'));
 	});
 };
 
 const setupLinkClicked = () => {
+	//Title anchor
 	$('a.stretched-link').mousedown(function() {
 		var $linkEl = $(this);
+		var url = $linkEl.attr('href');
+		rememberLink($linkEl, url);
+	});
+
+	//Comment icon
+	$('i.fas.fa-comment-dots').parent('a').mousedown(function() {
+		var $linkEl = $(this).closest('div.card-block.text-left').find('a.stretched-link');
 		var url = $linkEl.attr('href');
 		rememberLink($linkEl, url);
 	});
