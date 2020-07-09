@@ -3,7 +3,7 @@
 // @namespace    Doomness
 // @version      0.2
 // @description  Tracks the posts you have already seen. Works with RuqES expando button and infinite scroll (not required!).
-// @author       +Doomness
+// @author       @Doomness
 // @match        https://ruqqus.com/*
 // @require      https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js
 // @grant        none
