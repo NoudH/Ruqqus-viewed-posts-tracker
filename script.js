@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Ruqqus viewed posts tracker
 // @namespace    Doomness
-// @version      0.1
+// @version      0.2
 // @description  Tracks the posts you have already seen. Works with RuqES expando button and infinite scroll (not required!).
 // @author       +Doomness
 // @match        https://ruqqus.com/*
@@ -12,6 +12,10 @@
 // ==/UserScript==
 
 /* jshint esversion: 6 */
+
+/* Feel free to change these values to better fit your needs */
+let maxViewedPostsCount = 1000 // type: number >= 0; Maximum number of posts to store in the localstorage, 0 is infinite;
+/* --------------- */
 
 let viewedPosts = localStorage.getItem('viewedPosts') ? JSON.parse(localStorage.getItem('viewedPosts')) : [];
 let cardCount = $('.card').length;
@@ -56,8 +60,11 @@ const setupLinkClicked = () => {
 };
 
 const setupViewedPosts = () => {
-	while(viewedPosts.length > 999) {
-		viewedPosts.shift();
+	if(maxViewedPostsCount > 0) {
+		while(viewedPosts.length >= maxViewedPostsCount) {
+			viewedPosts.shift();
+		}
+		localStorage.setItem('viewedPosts', JSON.stringify(viewedPosts));
 	}
 	$('a.stretched-link').filter((_, el) => viewedPostsContainsUrl($(el).attr('href'))).addClass('viewedPost-link');
 };
