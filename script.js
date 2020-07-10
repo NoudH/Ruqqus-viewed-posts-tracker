@@ -85,6 +85,7 @@ const setupInfiniteScrollReload = () => {
 			cardCount = actualCardCount;
 			setupViewedPosts();
 			setupRuqesButton();
+			setupLinkClicked();
 		}
 	});
 };
