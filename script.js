@@ -44,7 +44,7 @@ const rememberLink = ($el, url) => {
 };
 
 const setupRuqesButton = () => {
-	$('a.RuqES-by-enefi--button').click(function() {
+	$('a.RuqES-by-enefi--expando-button').click(function() {
 		var $linkEl = $(this).closest('div.card-block.text-left').find('a.stretched-link');
 		rememberLink($linkEl, $linkEl.attr('href'));
 	});
