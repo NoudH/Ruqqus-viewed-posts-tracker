@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Ruqqus viewed posts tracker
 // @namespace    Doomness
-// @version      0.4
+// @version      0.5
 // @description  Tracks the posts you have already seen. Works with RuqES expando button and infinite scroll (not required!).
 // @author       @Doomness
 // @match        https://ruqqus.com/*
